@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: crm-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Tanushree@1234
+      MYSQL_DATABASE: crm
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: crm-app
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: crm
+      DB_USER: root
+      DB_PASSWORD: Tanushree@1234
+      PORT: 8080
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
