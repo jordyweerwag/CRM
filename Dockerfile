@@ -1,14 +1,13 @@
-# Use lightweight Java 17 runtime
-FROM eclipse-temurin:17-jdk-alpine
-
-# Set working directory
+# Stage 1: Build the application
+FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copy jar file (replace with your actual jar name)
-COPY target/*.jar app.jar
-
-# Expose Spring Boot port
+# Stage 2: Run the application
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-# Run application
 ENTRYPOINT ["java", "-jar", "app.jar"]

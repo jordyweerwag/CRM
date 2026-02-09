@@ -8,28 +8,11 @@ services:
       - key: PORT
         value: 8080
       - key: DB_HOST
-        fromDatabase:
-          name: crm-mysql
-          property: host
+        value: dpg-d64nfk7pm1nc738s4jag-a
       - key: DB_PORT
-        fromDatabase:
-          name: crm-mysql
-          property: port
+        value: 5432
       - key: DB_NAME
-        fromDatabase:
-          name: crm-mysql
-          property: database
+        value: crm_sales_pipeline
       - key: DB_USER
-        fromDatabase:
-          name: crm-mysql
-          property: user
-      - key: DB_PASSWORD
-        fromDatabase:
-          name: crm-mysql
-          property: password
-
-databases:
-  - name: crm-mysql
-    databaseName: crm_db
-    user: crm_user
-    plan: free
+        value: crm_sales_pipeline_user
+      # DB_PASSWORD must be set in the Render Dashboard manually for security.
